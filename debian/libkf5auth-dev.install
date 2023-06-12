@@ -1,5 +1,6 @@
 usr/include/KF5/KAuth/
-usr/include/KF5/kauth_version.h
+usr/include/KF5/KAuthCore/
+usr/include/KF5/KAuthWidgets/
 usr/lib/*/cmake/KF5Auth/KF5AuthConfig*.cmake
 usr/lib/*/cmake/KF5Auth/KF5AuthMacros.cmake
 usr/lib/*/cmake/KF5Auth/KF5AuthQchTargets.cmake

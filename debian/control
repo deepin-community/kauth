@@ -7,16 +7,16 @@ Uploaders: Aurélien COUDERC <coucouf@debian.org>,
 Build-Depends: cmake (>= 3.16~),
                debhelper-compat (= 13),
                doxygen,
-               extra-cmake-modules (>= 5.90.0~),
-               libkf5coreaddons-dev (>= 5.90.0~),
-               libpolkit-qt5-1-dev,
+               extra-cmake-modules (>= 5.103.0~),
+               libkf5coreaddons-dev (>= 5.103.0~),
+               libpolkit-qt5-1-dev (>= 0.112.0~),
                libqt5sql5-sqlite,
                pkg-config,
                pkg-kde-tools (>= 0.15.15ubuntu1~),
                qtbase5-dev (>= 5.15.2~),
                qttools5-dev (>= 5.4),
                qttools5-dev-tools (>= 5.4),
-Standards-Version: 4.6.0
+Standards-Version: 4.6.2
 Homepage: https://invent.kde.org/frameworks/kauth
 Vcs-Browser: https://salsa.debian.org/qt-kde-team/kde/kauth
 Vcs-Git: https://salsa.debian.org/qt-kde-team/kde/kauth.git
@@ -25,7 +25,7 @@ Rules-Requires-Root: no
 Package: libkf5auth-data
 Architecture: all
 Multi-Arch: foreign
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends},
 Description: Abstraction to system policy and authentication features
  KAuth is a framework to let applications perform actions as a
  privileged user.
@@ -40,12 +40,12 @@ Architecture: any
 Multi-Arch: same
 Depends: libkf5auth-dev-bin (= ${binary:Version}),
          libkf5auth5 (= ${binary:Version}),
-         libkf5coreaddons-dev (>= 5.90.0~),
+         libkf5coreaddons-dev (>= 5.103.0~),
          ${misc:Depends},
          ${shlibs:Depends},
-Breaks: libkf5auth-bin-dev (<< 5.41.0-1~), libkf5configwidgets-dev (<< 5.54)
-Replaces: libkf5auth-bin-dev (<< 5.41.0-1~)
-Recommends: libkf5auth-doc (= ${source:Version})
+Breaks: libkf5auth-bin-dev (<< 5.41.0-1~), libkf5configwidgets-dev (<< 5.54),
+Replaces: libkf5auth-bin-dev (<< 5.41.0-1~),
+Recommends: libkf5auth-doc (= ${source:Version}),
 Description: Abstraction to system policy and authentication features
  KAuth is a framework to let applications perform actions as a
  privileged user.
@@ -58,9 +58,9 @@ Package: libkf5auth-dev-bin
 Section: libdevel
 Architecture: any
 Multi-Arch: foreign
-Breaks: libkf5auth-bin-dev (<< 5.42.0-1~), libkf5auth-dev (<< 5.42.0-1~)
-Replaces: libkf5auth-bin-dev (<< 5.42.0-1~), libkf5auth-dev (<< 5.42.0-1~)
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Breaks: libkf5auth-bin-dev (<< 5.42.0-1~), libkf5auth-dev (<< 5.42.0-1~),
+Replaces: libkf5auth-bin-dev (<< 5.42.0-1~), libkf5auth-dev (<< 5.42.0-1~),
+Depends: ${misc:Depends}, ${shlibs:Depends},
 Description: Abstraction to system policy and authentication features
  KAuth is a framework to let applications perform actions as a
  privileged user.
@@ -74,7 +74,7 @@ Description: Abstraction to system policy and authentication features
 Package: libkf5auth-doc
 Architecture: all
 Multi-Arch: foreign
-Depends: ${misc:Depends}
+Depends: ${misc:Depends},
 Description: Abstraction to system policy and authentication features (documentation)
  KAuth is a framework to let applications perform actions as a
  privileged user.
@@ -134,8 +134,8 @@ Multi-Arch: same
 Depends: libkf5auth-data (= ${source:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
-Breaks: libkf5auth5 (<< 5.56~)
-Replaces: libkf5auth5 (<< 5.56~)
+Breaks: libkf5auth5 (<< 5.56~),
+Replaces: libkf5auth5 (<< 5.56~),
 Description: Abstraction to system policy and authentication features
  KAuth is a framework to let applications perform actions as a
  privileged user.

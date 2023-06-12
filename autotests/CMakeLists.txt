@@ -22,14 +22,14 @@ ecm_qt_declare_logging_category(kauthdebug_tests_SRCS
 
 
 set(libkauth_tests_static_SRCS
-    ../src/kauthaction.cpp
-    ../src/kauthactionreply.cpp
-    ../src/kauthexecutejob.cpp
+    ../src/action.cpp
+    ../src/actionreply.cpp
+    ../src/executejob.cpp
     ../src/AuthBackend.cpp
     # Use our "special" backends manager
     BackendsManager.cpp
     ../src/HelperProxy.cpp
-    ../src/kauthhelpersupport.cpp
+    ../src/helpersupport.cpp
     TestBackend.cpp
     ../src/backends/dbus/DBusHelperProxy.cpp
     ${kauth_dbus_adaptor_tests_SRCS}
@@ -55,11 +55,11 @@ ecm_mark_as_test(kauth_tests_static)
 
 target_include_directories(kauth_tests_static
   PUBLIC
-    $<TARGET_PROPERTY:KF5::Auth,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:KF5::AuthCore,INTERFACE_INCLUDE_DIRECTORIES>
     ${CMAKE_CURRENT_SOURCE_DIR}/../src
 )
 
-target_link_libraries(kauth_tests_static PUBLIC Qt${QT_MAJOR_VERSION}::DBus KF5::CoreAddons KF5::AuthCore)
+target_link_libraries(kauth_tests_static PUBLIC Qt${QT_MAJOR_VERSION}::DBus KF5::CoreAddons)
 
 ########### next target ###############
 

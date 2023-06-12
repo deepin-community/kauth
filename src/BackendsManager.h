@@ -5,12 +5,12 @@
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-#ifndef BACKENDS_MANAGER_H
-#define BACKENDS_MANAGER_H
+#ifndef KAUTH_BACKENDS_MANAGER_H
+#define KAUTH_BACKENDS_MANAGER_H
 
 #include "AuthBackend.h"
 #include "HelperProxy.h"
-#include <kauthcore_export.h>
+#include "kauthcore_export.h"
 
 namespace KAuth
 {
